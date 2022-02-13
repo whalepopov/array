@@ -19,7 +19,7 @@ public class IndexStorageTest {
     @Test
     public void compareInverted() {
         //создадим
-        IndexStorage indexStorage = new IndexStorage(100);
+        IndexStorage indexStorage = new IndexStorage(10);
         //заполним
         int actual[] = new int[indexStorage.size()];
         for (int i = 0; i < actual.length; i++) {
@@ -33,13 +33,13 @@ public class IndexStorageTest {
         Assertions.assertEquals(Arrays.toString(actual), Arrays.toString(expected));
 
         try {
-            int actualInt = arrayIndexStorage.get(-1313);
+            int actualInt = arrayIndexStorage.get(-13);
         } catch (IndexOutOfBoundsException thrown) {
             Assertions.assertEquals("Ячейка не существет!", thrown.getMessage());
         }
 
         try {
-            int actualInt = arrayIndexStorage.get(1313);
+            int actualInt = arrayIndexStorage.get(13);
         } catch (IndexOutOfBoundsException thrown) {
             Assertions.assertEquals("Ячейка не существет!", thrown.getMessage());
         }

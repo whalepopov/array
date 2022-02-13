@@ -9,7 +9,7 @@ public class IndexStorageTest {
     public void mustBeLessZero() {
         IndexStorage indexStorage = new IndexStorage(2);
         int actual = indexStorage.get(1);
-        int expected = -1;
+        int expected = -15;
 
         Assertions.assertEquals(actual, expected);
     }
